@@ -1,0 +1,6 @@
+customer_id,customer_name,email,city,segment,updated_at
+1,Aisha Khan,aisha@example.com,Bengaluru,Consumer,2026-10-01
+2,Arjun Rao,arjun@example.com,Mysuru,Corporate,2026-10-02
+3,Meera Nair,meera@example.com,Chennai,Consumer,2026-10-03
+4,Kabir Shah,kabir@example.com,Hyderabad,Small Business,2026-10-04
+5,Diya Iyer,diya@example.com,Bengaluru,Corporate,2026-10-05

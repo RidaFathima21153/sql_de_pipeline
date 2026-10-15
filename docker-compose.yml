@@ -1,0 +1,22 @@
+services:
+  db:
+    image: postgres:16
+    container_name: sql-de-pipeline-week6-db
+    environment:
+      POSTGRES_DB: de_pipeline
+      POSTGRES_USER: de_user
+      POSTGRES_PASSWORD: de_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./sql/01_setup_and_load.sql:/docker-entrypoint-initdb.d/01_setup_and_load.sql:ro
+      - ./data:/data:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U de_user -d de_pipeline"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  postgres_data:
